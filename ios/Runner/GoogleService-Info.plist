@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>63345703787-bksv776fd8t0r9afr2ekcnb15j8oumqs.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.63345703787-bksv776fd8t0r9afr2ekcnb15j8oumqs</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC01lzR8_mR18hjlMQAlex6nWmH_riBT5Q</string>
+	<key>GCM_SENDER_ID</key>
+	<string>63345703787</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.talky</string>
+	<key>PROJECT_ID</key>
+	<string>talky-107ac</string>
+	<key>STORAGE_BUCKET</key>
+	<string>talky-107ac.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:63345703787:ios:fc433a8deff4c894b3ea2e</string>
+</dict>
+</plist>

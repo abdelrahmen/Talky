@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "63345703787",
+    "project_id": "talky-107ac",
+    "storage_bucket": "talky-107ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63345703787:android:47ca555a326feb41b3ea2e",
+        "android_client_info": {
+          "package_name": "com.example.talky"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63345703787-fukhvnpgu58fg01hu6dv4vd5m6pg71a3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ8h5lYyuCuI6uzCXHguFPq4gxryDsY0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "63345703787-fukhvnpgu58fg01hu6dv4vd5m6pg71a3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "63345703787-bksv776fd8t0r9afr2ekcnb15j8oumqs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.talky"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
