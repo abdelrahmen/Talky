@@ -30,7 +30,9 @@ class ChatDetailsScreen extends StatelessWidget {
               ),
               title: Row(
                 children: [
-                  CircleAvatar(),
+                  CircleAvatar(
+                    backgroundImage: NetworkImage("${model.image}"),
+                  ),
                   const SizedBox(
                     width: 10,
                   ),
@@ -96,10 +98,6 @@ class ChatDetailsScreen extends StatelessWidget {
                                 recieverId: model.uId,
                                 dateTime: DateTime.now().toString(),
                               );
-                              print("sent ${model.uId} +++++++++++");
-                              print(
-                                  "sent ${messageController.text} +++++++++++");
-                              messageController.text = "";
                             }
                           },
                           color: Colors.white,
