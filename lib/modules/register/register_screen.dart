@@ -4,6 +4,7 @@ import 'package:talky/modules/chats_screen.dart';
 import 'package:talky/modules/register/cubit/cubit.dart';
 import 'package:talky/modules/register/cubit/states.dart';
 import 'package:talky/shared/components.dart';
+import 'package:talky/styles/colors.dart';
 
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});
@@ -27,6 +28,11 @@ class RegisterScreen extends StatelessWidget {
         builder: (context, state) {
           final cubit = RegisterCubit.get(context);
           return Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.white.withOpacity(0),
+              foregroundColor: MyColors.spaceCadet,
+              elevation: 0,
+            ),
             body: Center(
               child: SingleChildScrollView(
                 child: Form(
@@ -59,7 +65,7 @@ class RegisterScreen extends StatelessWidget {
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             label: Text('Name'),
-                            prefixIcon: Icon(Icons.email_outlined),
+                            prefixIcon: Icon(Icons.person),
                           ),
                         ),
                         const SizedBox(
@@ -130,9 +136,13 @@ class RegisterScreen extends StatelessWidget {
                         const SizedBox(
                           height: 20,
                         ),
-                        const SizedBox(height: 10,),
-                        if(state is RegisterLoadingState)
-                          const Center(child: CircularProgressIndicator(),),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        if (state is RegisterLoadingState)
+                          const Center(
+                            child: CircularProgressIndicator(),
+                          ),
                       ],
                     ),
                   ),
