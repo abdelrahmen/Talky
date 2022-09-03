@@ -15,3 +15,5 @@ class MainSendMessageErrorState extends MainState {}
 class MainGetMessageLoadingState extends MainState {}
 
 class MainGetMessageSuccessfulState extends MainState {}
+
+class MainRefreshUsersListState extends MainState {}

@@ -97,4 +97,6 @@ class MainCubit extends Cubit<MainState> {
     });
     emit(MainGetMessageSuccessfulState());
   }
+
+  void refreshUsers()=>emit(MainRefreshUsersListState());
 }

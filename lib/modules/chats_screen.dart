@@ -43,6 +43,10 @@ class ChatsScreen extends StatelessWidget {
                     : const Center(
                         child: Text("Empty"),
                       ),
+                floatingActionButton: FloatingActionButton(
+                  onPressed: () => cubit.refreshUsers(),
+                  child: const Icon(Icons.refresh),
+                ),
               );
             });
       },
@@ -59,7 +63,9 @@ Widget buildChatItem(context, UserModel model) => InkWell(
         padding: const EdgeInsets.all(20.0),
         child: Row(
           children: [
-            CircleAvatar(),
+            CircleAvatar(
+              backgroundImage: NetworkImage("${model.image}"),
+            ),
             const SizedBox(
               width: 10,
             ),

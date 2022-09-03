@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +11,6 @@ import 'package:talky/styles/colors.dart';
 
 class SettingsScreen extends StatelessWidget {
   SettingsScreen({super.key});
-  // final user = FirebaseAuth.instance.currentUser;
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -37,6 +38,45 @@ class SettingsScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Stack(
+                              alignment: AlignmentDirectional.bottomEnd,
+                              children: [
+                                CircleAvatar(
+                                  backgroundColor: Colors.blue,
+                                  radius: 52,
+                                  child: CircleAvatar(
+                                    radius: 50,
+                                    backgroundImage: (state is SettingImagePickedSuccessfulState)
+                                    ? FileImage(File(cubit.image?.path ?? "")) as ImageProvider
+                                    :NetworkImage(
+                                        "${FirebaseAuth.instance.currentUser?.photoURL}"),
+                                  ),
+                                ),
+                                //pick new image
+                                Container(
+                                  width: 30,
+                                  height: 30,
+                                  clipBehavior: Clip.antiAlias,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(100),
+                                    color: Colors.blue,
+                                  ),
+                                  child: IconButton(
+                                    onPressed: () {
+                                      cubit.pickImage();
+                                    },
+                                    icon: const Icon(Icons.edit_sharp),
+                                    iconSize: 15,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                         //name form field
                         const Text('Name'),
                         const SizedBox(
@@ -46,7 +86,8 @@ class SettingsScreen extends StatelessWidget {
                           controller: nameController,
                           decoration: InputDecoration(
                             border: const OutlineInputBorder(),
-                            hintText: "${FirebaseAuth.instance.currentUser?.displayName}",
+                            hintText:
+                                "${FirebaseAuth.instance.currentUser?.displayName}",
                           ),
                         ),
                         const SizedBox(
@@ -61,7 +102,8 @@ class SettingsScreen extends StatelessWidget {
                           controller: emailController,
                           decoration: InputDecoration(
                             border: const OutlineInputBorder(),
-                            hintText: "${FirebaseAuth.instance.currentUser?.email}",
+                            hintText:
+                                "${FirebaseAuth.instance.currentUser?.email}",
                           ),
                           validator: (value) {
                             bool emailValid = false;
@@ -99,7 +141,7 @@ class SettingsScreen extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            //update user data
+                            //update user data, save button
                             ElevatedButton(
                                 onPressed: () {
                                   cubit.update(
@@ -108,7 +150,8 @@ class SettingsScreen extends StatelessWidget {
                                     newPassword: passwordController.text,
                                     context: context,
                                   );
-                                }, child: const Text("Save")),
+                                },
+                                child: const Text("Save")),
                             const Spacer(),
                             //signout button
                             TextButton(

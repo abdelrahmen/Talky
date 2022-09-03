@@ -15,11 +15,13 @@ class RegisterCubit extends Cubit<RegisterState> {
     required name,
     required email,
     required uId,
+    required imageUrl,
   }) async {
     db.collection('users').doc(FirebaseAuth.instance.currentUser?.uid).set({
       "name": name,
       "email": email,
       "uId": uId,
+      "image": imageUrl,
     });
   }
 
@@ -38,10 +40,13 @@ class RegisterCubit extends Cubit<RegisterState> {
           .then((value) async {
         final user = FirebaseAuth.instance.currentUser;
         await user?.updateDisplayName(name);
+        await user?.updatePhotoURL(
+            "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png");
         addDataToFireBase(
           name: name,
           email: email,
           uId: user?.uid,
+          imageUrl: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
         );
         emit(RegisterSuccessfulState());
       });

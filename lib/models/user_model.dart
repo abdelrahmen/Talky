@@ -9,6 +9,6 @@ class UserModel {
     name = json["name"]; 
     email = json["email"]; 
     uId = json["uId"];
-    image = json["image"];
+    image = json["imageUrl"];
   }
 }
